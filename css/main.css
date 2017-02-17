@@ -1,0 +1,50 @@
+.container {
+  background-color: cornflowerblue;
+  overflow: auto; }
+  .container .video-wrapper {
+    width: 50%;
+    text-align: center; }
+  .container .video-wrapper > .video-container {
+    position: relative; }
+    .container .video-wrapper > .video-container .overlay {
+      position: absolute;
+      bottom: 55px;
+      left: 16px;
+      background-color: rgba(100, 149, 237, 0.3);
+      display: none; }
+      .container .video-wrapper > .video-container .overlay .message {
+        background-color: transparent;
+        color: white;
+        width: 600px;
+        height: 50px; }
+  .container .cue-point-list-wrapper, .container .video-wrapper {
+    overflow: auto;
+    float: left;
+    padding: 20px; }
+  .container .cue-point-list-wrapper {
+    width: 43%;
+    height: 423px; }
+    .container .cue-point-list-wrapper .cue-point-list-body {
+      height: 60%;
+      background-color: #fff;
+      overflow: scroll; }
+      .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list {
+        list-style: none;
+        padding: 0; }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list li.cue-point-list-item {
+          padding: 20px; }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item > ul {
+          list-style: none;
+          padding: 0; }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(odd) {
+          background-color: rgba(100, 149, 237, 0.3); }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(odd):hover {
+          background-color: rgba(100, 149, 237, 0.6);
+          cursor: pointer; }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(even) {
+          background-color: rgba(105, 105, 105, 0.3); }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(even):hover {
+          background-color: rgba(105, 105, 105, 0.6);
+          cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */

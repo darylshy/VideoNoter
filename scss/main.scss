@@ -1,0 +1,82 @@
+.container{
+  background-color: cornflowerblue;
+  overflow: auto;
+  .video-wrapper{
+    width: 50%;
+    text-align: center;
+  }
+  .video-wrapper>.video-container{
+    position: relative;
+
+    .overlay{
+      position: absolute;
+      bottom: 55px;
+      left: 16px;
+      background-color: rgba(100, 149, 237, .3);
+      display: none;
+      .message{
+        background-color: transparent;
+        color: white;
+        width: 600px;
+        height: 50px;
+      }
+    }
+  }
+
+  .cue-point-list-wrapper, .video-wrapper{
+    overflow: auto;
+    float: left;
+
+    padding: 20px;
+  }
+
+  .cue-point-list-wrapper{
+    width: 43%;
+    height: 423px;
+    .cue-point-list-body{
+      height:60%;
+      background-color: #fff;
+      overflow: scroll;
+
+      .cue-point-list{
+        list-style: none;
+        padding:0;
+
+        li.cue-point-list-item{
+          padding:20px;
+        }
+
+        .cue-point-list-item>ul{
+          list-style: none;
+          padding: 0;
+        }
+
+        .cue-point-list-item:nth-child(odd){
+          background-color: rgba(100, 149, 237, .3);
+        }
+        .cue-point-list-item:nth-child(odd):hover{
+          background-color: rgba(100, 149, 237, .6);
+          cursor: pointer;
+        }
+        .cue-point-list-item:nth-child(even){
+          background-color: rgba(105,105,105,.3);
+        }
+        .cue-point-list-item:nth-child(even):hover{
+          background-color: rgba(105, 105, 105, .6);
+          cursor: pointer;
+        }
+      }
+
+
+    }
+
+  }
+
+  //div[class$='-container']{
+  //  float: left;
+  //  &:nth-child(2){
+  //    margin-left: 50px;
+  //  }
+  //}
+}
+
