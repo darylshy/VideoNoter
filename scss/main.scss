@@ -1,41 +1,94 @@
 .container{
+  font-family: 'Quicksand', sans-serif;
+  margin: 20px auto;
   background-color: cornflowerblue;
   overflow: auto;
+  width:60%;
+  border-radius: 10px;
   .video-wrapper{
-    width: 50%;
-    text-align: center;
-  }
-  .video-wrapper>.video-container{
-    position: relative;
+    overflow: auto;
+    padding: 0;
+    margin: 50px auto 0 auto;
+    width: 550px;
+    border-radius: inherit;
+    .video-container{
+      position: relative;
+      background-color: #fff;
+      border-radius: inherit;
+      padding: 10px;
 
-    .overlay{
-      position: absolute;
-      bottom: 55px;
-      left: 16px;
-      background-color: rgba(100, 149, 237, .3);
-      display: none;
-      .message{
-        background-color: transparent;
-        color: white;
-        width: 600px;
-        height: 50px;
+      .overlay{
+        position: absolute;
+        bottom: 70px;
+        left: 10px;
+        width: 530px;
+        background-color: rgba(100, 149, 237, .3);
+        display: block;
+        height:50px;
+        .message{
+          font-family:inherit;
+          background-color: transparent;
+          color: white;
+          height: 100%;
+          line-height:50px;
+          padding: 0 20px;
+          margin: 0;
+        }
       }
     }
+    .cp-form-container{
+
+      input.cp-message{
+        font-family:inherit;
+        color: dimgray;
+        font-size: 1.5em;
+        display: inline-block;
+        width: 76.9%;
+        height: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin: 5px 0 5px -2px;
+        padding: 12px;
+        border: none;
+      }
+      input.cp-message:focus{
+        outline: 0;
+      }
+
+      button.cp-message-submit{
+        font-family:inherit;
+        font-size:1.5em;
+        display: inline-block;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 19%;
+        margin-left: -4px;
+        height: 74px;
+        padding: 0;
+        border: none;
+      }
+      button.cp-message-submit:hover{
+        background-color: lightgrey;
+        cursor: pointer;
+      }
+      button.cp-message-submit:focus{
+        outline:0;
+      }
+    }
+
   }
+
 
   .cue-point-list-wrapper, .video-wrapper{
     overflow: auto;
-    float: left;
-
-    padding: 20px;
+    padding: 0;
   }
 
   .cue-point-list-wrapper{
-    width: 43%;
-    height: 423px;
+    width: 550px;
+    margin: auto;
     .cue-point-list-body{
-      height:60%;
-      background-color: #fff;
+      height:100%;
       overflow: scroll;
 
       .cue-point-list{
@@ -44,39 +97,31 @@
 
         li.cue-point-list-item{
           padding:20px;
+          margin-bottom:1px;
+          span{
+            display: inline-block;
+            margin-right: 30%;
+            &.delete-cue-point{
+              float: right;
+              margin: 0;
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+            &.delete-cue-point:hover>button{
+              cursor: pointer;
+            }
+          }
         }
-
-        .cue-point-list-item>ul{
-          list-style: none;
-          padding: 0;
-        }
-
-        .cue-point-list-item:nth-child(odd){
-          background-color: rgba(100, 149, 237, .3);
-        }
-        .cue-point-list-item:nth-child(odd):hover{
-          background-color: rgba(100, 149, 237, .6);
-          cursor: pointer;
-        }
-        .cue-point-list-item:nth-child(even){
+        .cue-point-list-item{
           background-color: rgba(105,105,105,.3);
         }
-        .cue-point-list-item:nth-child(even):hover{
+        .cue-point-list-item:hover{
           background-color: rgba(105, 105, 105, .6);
           cursor: pointer;
         }
       }
-
-
     }
-
   }
-
-  //div[class$='-container']{
-  //  float: left;
-  //  &:nth-child(2){
-  //    margin-left: 50px;
-  //  }
-  //}
 }
 

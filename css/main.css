@@ -1,49 +1,96 @@
 .container {
+  font-family: 'Quicksand', sans-serif;
+  margin: 20px auto;
   background-color: cornflowerblue;
-  overflow: auto; }
+  overflow: auto;
+  width: 60%;
+  border-radius: 10px; }
   .container .video-wrapper {
-    width: 50%;
-    text-align: center; }
-  .container .video-wrapper > .video-container {
-    position: relative; }
-    .container .video-wrapper > .video-container .overlay {
-      position: absolute;
-      bottom: 55px;
-      left: 16px;
-      background-color: rgba(100, 149, 237, 0.3);
-      display: none; }
-      .container .video-wrapper > .video-container .overlay .message {
-        background-color: transparent;
-        color: white;
-        width: 600px;
+    overflow: auto;
+    padding: 0;
+    margin: 50px auto 0 auto;
+    width: 550px;
+    border-radius: inherit; }
+    .container .video-wrapper .video-container {
+      position: relative;
+      background-color: #fff;
+      border-radius: inherit;
+      padding: 10px; }
+      .container .video-wrapper .video-container .overlay {
+        position: absolute;
+        bottom: 70px;
+        left: 10px;
+        width: 530px;
+        background-color: rgba(100, 149, 237, 0.3);
+        display: block;
         height: 50px; }
+        .container .video-wrapper .video-container .overlay .message {
+          font-family: inherit;
+          background-color: transparent;
+          color: white;
+          height: 100%;
+          line-height: 50px;
+          padding: 0 20px;
+          margin: 0; }
+    .container .video-wrapper .cp-form-container input.cp-message {
+      font-family: inherit;
+      color: dimgray;
+      font-size: 1.5em;
+      display: inline-block;
+      width: 76.9%;
+      height: 50px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      margin: 5px 0 5px -2px;
+      padding: 12px;
+      border: none; }
+    .container .video-wrapper .cp-form-container input.cp-message:focus {
+      outline: 0; }
+    .container .video-wrapper .cp-form-container button.cp-message-submit {
+      font-family: inherit;
+      font-size: 1.5em;
+      display: inline-block;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: 19%;
+      margin-left: -4px;
+      height: 74px;
+      padding: 0;
+      border: none; }
+    .container .video-wrapper .cp-form-container button.cp-message-submit:hover {
+      background-color: lightgrey;
+      cursor: pointer; }
+    .container .video-wrapper .cp-form-container button.cp-message-submit:focus {
+      outline: 0; }
   .container .cue-point-list-wrapper, .container .video-wrapper {
     overflow: auto;
-    float: left;
-    padding: 20px; }
+    padding: 0; }
   .container .cue-point-list-wrapper {
-    width: 43%;
-    height: 423px; }
+    width: 550px;
+    margin: auto; }
     .container .cue-point-list-wrapper .cue-point-list-body {
-      height: 60%;
-      background-color: #fff;
+      height: 100%;
       overflow: scroll; }
       .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list {
         list-style: none;
         padding: 0; }
         .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list li.cue-point-list-item {
-          padding: 20px; }
-        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item > ul {
-          list-style: none;
-          padding: 0; }
-        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(odd) {
-          background-color: rgba(100, 149, 237, 0.3); }
-        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(odd):hover {
-          background-color: rgba(100, 149, 237, 0.6);
-          cursor: pointer; }
-        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(even) {
+          padding: 20px;
+          margin-bottom: 1px; }
+          .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list li.cue-point-list-item span {
+            display: inline-block;
+            margin-right: 30%; }
+            .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list li.cue-point-list-item span.delete-cue-point {
+              float: right;
+              margin: 0;
+              width: 20px;
+              height: 20px;
+              cursor: pointer; }
+            .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list li.cue-point-list-item span.delete-cue-point:hover > button {
+              cursor: pointer; }
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item {
           background-color: rgba(105, 105, 105, 0.3); }
-        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:nth-child(even):hover {
+        .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list .cue-point-list-item:hover {
           background-color: rgba(105, 105, 105, 0.6);
           cursor: pointer; }
 

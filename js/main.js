@@ -18,8 +18,8 @@
         id: 67710268,
         autopause: true,
         autoplay: false,
-        height: "400px",
-        width: "600px",
+        height: "300px",
+        width: "530px",
         title: true
     });
 
@@ -55,13 +55,13 @@
     }
 
     //another quick helper function to adjust cue-list counter display
-    function findObjIdx(array, attr, value) {
-        for(var i = 0; i < array.length; i += 1) {
-            if(array[i][attr] === value) {
-                return i+1;
-            }
-        }
-        return -1;
+    function setIndex(value) {
+        return robotTraining.getCuePoints()
+            .then(function (cps) {
+                return cps.findIndex(function (el) {
+                    return el.id == value;
+                });
+            });
     }
 
     //handle click event/add cue points
@@ -87,27 +87,21 @@
                             seekToCuePoint(data.seconds - .5);
                         };
 
-                        var h4 = document.createElement('h4');
-                        h4.innerHTML = 'cue-point-' + findObjIdx(id) + ':';
-                        h4.className = 'cue-point-list-item-number';
-                        li.appendChild(h4);
-                        var ul = document.createElement('ul');
-                        li.appendChild(ul);
-                        var span = document.createElement('span');
-                        ul.appendChild(span);
-                        var li1 = document.createElement('li');
-                        var li2 = document.createElement('li');
-                        var li3 = document.createElement('li');
-                        li1.innerHTML = 'id: ' + id;
-                        li2.innerHTML = 'marker: ' +  timeConverter(data.seconds);
-                        li3.innerHTML = 'message: ' + data.message;
-                        var lis = [li1,li2,li3];
-                        for(var i = 0; i<lis.length; i++){
-                            span.appendChild(lis[i]);
-                        }
-                        var span2 = document.createElement('span');
-                        span2.className = 'delete-cue-point';
-                        ul.appendChild(span2);
+                        var header = document.createElement('header');
+                        li.appendChild(header);
+                        var headerSpan1 = document.createElement('span');
+                        headerSpan1.className = 'cue-point-list-item-number';
+                        setIndex(id)
+                            .then(function (idx) {
+                                headerSpan1.innerHTML = 'cuepoint ' + (idx+1) + ':';
+                            });
+                        header.appendChild(headerSpan1);
+                        var headerSpan2 = document.createElement('span');
+                        headerSpan2.innerHTML = 'marker: ' +  timeConverter(data.seconds);
+                        header.appendChild(headerSpan2);
+                        var headerSpan3 = document.createElement('span');
+                        headerSpan3.className = 'delete-cue-point';
+                        header.appendChild(headerSpan3);
                         var button = document.createElement('button');
                         button.className = "delete-cue-point-button";
                         button.innerHTML = '&otimes;';
@@ -116,20 +110,29 @@
                             e.stopPropagation();
                             var cpListItem = e.target.parentElement.parentElement.parentElement;
                             removeCuePoint(cpListItem.getAttribute('data-cue-point-id'));
-
-                            robotTraining.getCuePoints().then(function (cps) {
-                                var remainingListItems = body.querySelectorAll('li[data-cue-point-id]');
-                                for(var i = 0; i<remainingListItems.length; i++){
-                                    var idx = findObjIdx(cps,'id',remainingListItems[i].getAttribute('data-cue-point-id'));
-                                    var itemNumber = remainingListItems[i].querySelector('.cue-point-list-item-number');
-                                    itemNumber.innerHTML = itemNumber.innerHTML.replace(/cue-point-\d+/g,'cue-point-' + (idx));
-                                }
-
-                                cpListItem.remove();
-                            });
+                            cpListItem.remove();
+                            var remainingListItems = body.querySelectorAll('li[data-cue-point-id]');
+                            var indexes = [];
+                            for(var i = 0; i<remainingListItems.length; i++){
+                                var index = setIndex(remainingListItems[i].getAttribute('data-cue-point-id'));
+                                indexes.push(index);
+                            }
+                            Promise.all(indexes)
+                                .then(function (idx) {
+                                    idx.forEach(function (i) {
+                                        var itemNumber = remainingListItems[i].querySelector('.cue-point-list-item-number');
+                                        itemNumber.innerHTML = itemNumber.innerHTML.replace(/cuepoint\s\d+/g,'cuepoint ' + (i+1));
+                                    });
+                                });
                         };
-                        span2.appendChild(button);
-                        counter++;
+
+                        headerSpan3.appendChild(button);
+                        var hr = document.createElement('hr');
+                        li.appendChild(hr);
+                        var p = document.createElement('p');
+                        p.innerHTML = data.message;
+                        li.appendChild(p);
+
                     })
                     .catch(function (error) {
                         switch (error.name) {

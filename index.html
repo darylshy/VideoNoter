@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>Document</title>
 </head>
@@ -18,17 +18,14 @@
             </div>
         </div>
         <div class="cp cp-form-container">
-            <label for="cp-message" class="cp-message-label">New Message</label>
-            <input type="text" name="" id="cp-message" class="cp-message" placeholder="Insert Message Here">
-            <input type="button" value="Submit" class="cp-message-submit">
+            <input type="text" name="" id="cp-message" class="cp-message" placeholder="Insert Message Here" maxlength="60">
+            <button type="submit" class="cp-message-submit">Submit</button>
         </div>
     </div>
     <div class="cue-point-list-wrapper">
-        <header class="cue-point-list-header">Cue List Header</header>
         <div class="cue-point-list-body">
             <ul class="cue-point-list"></ul>
         </div>
-        <footer class="cue-list-footer">Cue List Footer</footer>
     </div>
 </div>
 
