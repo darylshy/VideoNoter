@@ -1,4 +1,10 @@
 .container{
+  height: 93vh;
+  header.project-header{
+    float: right;
+    color: white;
+    margin: 10px 10px 0 0;
+  }
   font-family: 'Quicksand', sans-serif;
   margin: 20px auto;
   background-color: cornflowerblue;
@@ -6,7 +12,7 @@
   width:60%;
   border-radius: 10px;
   .video-wrapper{
-    overflow: auto;
+    overflow: scroll;
     padding: 0;
     margin: 50px auto 0 auto;
     width: 550px;
@@ -23,7 +29,7 @@
         left: 10px;
         width: 530px;
         background-color: rgba(100, 149, 237, .3);
-        display: block;
+        display: none;
         height:50px;
         .message{
           font-family:inherit;
@@ -88,7 +94,7 @@
     width: 550px;
     margin: auto;
     .cue-point-list-body{
-      height:100%;
+      height: 130px;
       overflow: scroll;
 
       .cue-point-list{

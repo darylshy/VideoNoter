@@ -1,12 +1,17 @@
 .container {
+  height: 93vh;
   font-family: 'Quicksand', sans-serif;
   margin: 20px auto;
   background-color: cornflowerblue;
   overflow: auto;
   width: 60%;
   border-radius: 10px; }
+  .container header.project-header {
+    float: right;
+    color: white;
+    margin: 10px 10px 0 0; }
   .container .video-wrapper {
-    overflow: auto;
+    overflow: scroll;
     padding: 0;
     margin: 50px auto 0 auto;
     width: 550px;
@@ -22,7 +27,7 @@
         left: 10px;
         width: 530px;
         background-color: rgba(100, 149, 237, 0.3);
-        display: block;
+        display: none;
         height: 50px; }
         .container .video-wrapper .video-container .overlay .message {
           font-family: inherit;
@@ -69,7 +74,7 @@
     width: 550px;
     margin: auto; }
     .container .cue-point-list-wrapper .cue-point-list-body {
-      height: 100%;
+      height: 130px;
       overflow: scroll; }
       .container .cue-point-list-wrapper .cue-point-list-body .cue-point-list {
         list-style: none;

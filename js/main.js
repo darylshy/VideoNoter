@@ -132,6 +132,9 @@
                         var p = document.createElement('p');
                         p.innerHTML = data.message;
                         li.appendChild(p);
+                        var scrollBy = document.getElementsByClassName('cue-point-list-item').length;
+                        console.log(scrollBy);
+                        document.getElementsByClassName('cue-point-list-body')[0].scrollTop = 130*scrollBy;
 
                     })
                     .catch(function (error) {
